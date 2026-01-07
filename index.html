@@ -1,0 +1,147 @@
+index.html
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Your Brand Name</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background-color: #faf9f7;
+      color: #222;
+      line-height: 1.6;
+    }
+
+    header {
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .lang-switch {
+      text-align: right;
+      padding: 10px 20px;
+    }
+
+    .lang-switch button {
+      border: none;
+      background: none;
+      font-size: 14px;
+      cursor: pointer;
+      margin-left: 10px;
+    }
+
+    section {
+      padding: 40px 20px;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    h1, h2 {
+      font-weight: 500;
+    }
+
+    .products {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 30px;
+    }
+
+    .product {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 13px;
+      padding: 30px;
+      color: #777;
+    }
+
+    @media (min-width: 768px) {
+      .products {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- 언어 전환 -->
+  <div class="lang-switch">
+    <button onclick="setLang('ko')">KR</button>
+    <button onclick="setLang('en')">EN</button>
+  </div>
+
+  <!-- 헤더 -->
+  <header>
+    <h1 data-ko="당신의 브랜드 이름"
+        data-en="Your Brand Name"></h1>
+    <p data-ko="한국과 파키스탄의 감성을 담은 주얼리"
+       data-en="Jewelry inspired by Korean and Pakistani culture"></p>
+  </header>
+
+  <!-- 브랜드 소개 -->
+  <section>
+    <h2 data-ko="브랜드 소개"
+        data-en="About the Brand"></h2>
+
+    <p data-ko="우리의 주얼리는 문화와 의미에서 시작됩니다. 종교와 국적을 넘어, 이야기와 감정을 담은 아이템을 선보입니다."
+       data-en="Our jewelry begins with culture and meaning. Beyond religion and nationality, we create pieces that carry stories and emotions.">
+    </p>
+  </section>
+
+  <!-- 상품 -->
+  <section>
+    <h2 data-ko="컬렉션"
+        data-en="Collection"></h2>
+
+    <div class="products">
+      <div class="product">
+        <h3 data-ko="파키스탄 줌카 귀걸이"
+            data-en="Pakistani Jhumka Earrings"></h3>
+        <p data-ko="전통적인 줌카 디자인을 현대적으로 재해석한 귀걸이."
+           data-en="A modern interpretation of traditional Pakistani jhumka earrings."></p>
+      </div>
+
+      <div class="product">
+        <h3 data-ko="아이딸 쿠르시 반지"
+            data-en="Ayatul Kursi Ring"></h3>
+        <p data-ko="아이딸 쿠르시 문구가 섬세하게 각인된 의미 있는 반지."
+           data-en="A meaningful ring delicately engraved with Ayatul Kursi."></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 안내 -->
+  <section>
+    <h2 data-ko="구매 안내"
+        data-en="Purchase Info"></h2>
+    <p data-ko="현재는 인스타그램 DM을 통해 문의 및 주문을 받고 있습니다."
+       data-en="Currently, orders and inquiries are accepted via Instagram DM."></p>
+  </section>
+
+  <!-- 푸터 -->
+  <footer>
+    <p>© 2026 Your Brand Name</p>
+    <p data-ko="Instagram: @yourbrand"
+       data-en="Instagram: @yourbrand"></p>
+  </footer>
+
+  <!-- 언어 스크립트 -->
+  <script>
+    function setLang(lang) {
+      document.querySelectorAll('[data-ko]').forEach(el => {
+        el.textContent = el.getAttribute(`data-${lang}`);
+      });
+    }
+    setLang('ko');
+  </script>
+
+</body>
+</html>
